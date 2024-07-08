@@ -31,6 +31,10 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # custom gem
 gem "devise"
 
+gem "bootstrap"
+
+gem "sassc-rails"
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
