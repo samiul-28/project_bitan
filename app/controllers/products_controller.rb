@@ -3,11 +3,19 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: %i[ new edit update destroy ]
 
   def index
-    @products = Product.all
+    if params[:query].present?
+      search
+    else
+      @products = Product.all
+    end
+  end
+  def search
+    @products = Product.search(params[:query])
+    render
   end
 
   def show
-    # find_product
+    find_product
   end
 
   def new
