@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
   def search
     @products = Product.search(params[:query])
-    render
+    render "products/search"
   end
 
   def show
