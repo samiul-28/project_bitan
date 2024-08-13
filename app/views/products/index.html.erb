@@ -3,6 +3,7 @@
 <% content_for :title, "Products" %>
 
 <h1>Products</h1>
+<%= render "products/search" %>
 
 <div id="products">
   <% @products.each do |product| %>
