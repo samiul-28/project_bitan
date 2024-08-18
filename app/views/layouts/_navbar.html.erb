@@ -23,15 +23,19 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-          <li class="nav-item">
-            <a class="nav-link active btn btn-primary" type="button" href="#">signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active btn btn-success" type="button" href="#">login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active btn btn-danger" type="button" href="#">logout</a>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %><br />
+            </li>
+            <% else %>
+            <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %><br />
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign In", new_user_session_path, class: "btn btn-success" %>
+            </li>
+          <% end %>
+
       </ul>
     </div>
   </div>

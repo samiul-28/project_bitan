@@ -30,9 +30,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # custom gem
 gem "devise"
-
 gem "bootstrap"
-
 gem "sassc-rails"
 
 
@@ -56,6 +54,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate"
+  gem "byebug"
+  gem "letter_opener"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
