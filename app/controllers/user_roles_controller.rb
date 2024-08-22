@@ -1,14 +1,6 @@
 class UserRolesController < ApplicationController
   def index
-    if params[:search].present?
-      search
-    else
       @users = User.all
-    end
-  end
-
-  def search
-    @users = User.search(params[:search])
   end
 
   def show
@@ -19,13 +11,20 @@ class UserRolesController < ApplicationController
     @user = User.new
   end
 
+  def create
+    @user = User.new(user_roles_params)
+
+    if @user.create
+      redirect_to user_roles_url(@user), notice: "New user created successfully"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def edit
     find_user
   end
 
-  def create
-    @user = User.new(user_roles_params)
-  end
 
   def update
     if @user.update(user_roles_params)

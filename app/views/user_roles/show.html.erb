@@ -1,2 +1,14 @@
-<h1>UserRoles#show</h1>
-<p>Find me in app/views/user_roles/show.html.erb</p>
+<h1>Details</h1>
+
+  <% @user do |user|%>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= user.name %> Details</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><%= user.user_type %></h6>
+
+      <a href="#" class="card-link">Edit User</a>
+      <a href="#" class="card-link">Delete User</a>
+    </div>
+  </div>
+  <% end %>
