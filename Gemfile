@@ -32,7 +32,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "devise"
 gem "bootstrap"
 gem "sassc-rails"
-
+gem "pundit"
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -50,7 +50,6 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-  gem "byebug"
 end
 
 group :development do

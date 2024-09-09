@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  USERTYPES = [ "Admin", "Client", "Guest_user" ]
+  USERTYPES = [ "admin", "moderator", "client", "guest_user" ]
   #validates :user_type, inclusion: { in: USERTYPES, message: "%{value} is not a valid user type" }
 end

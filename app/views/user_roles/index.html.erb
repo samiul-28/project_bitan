@@ -17,8 +17,7 @@
       <h5 class="card-title"><%= user.name %> Details</h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
       <h6 class="card-subtitle mb-2 text-muted"><%= user.user_type %></h6>
-
-      <a href="#" class="card-link">Edit User</a>
+      <%= link_to "Edit User Role", edit_user_role_path(user) %>
       <a href="#" class="card-link">Delete User</a>
     </div>
   </div>

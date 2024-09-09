@@ -1,0 +1,16 @@
+<h1>Update User Role</h1>
+
+<div class="text-center">
+  <%= form_with model: @user, url: user_role_path(@user) do |f| %>
+
+    <div class="field">
+      <%= f.label :user_type %><br>
+      <%= f.select :user_type, options_for_select(User::USERTYPES) %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+
+</div>
