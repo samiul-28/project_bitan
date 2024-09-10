@@ -1,4 +1,5 @@
 class UserRolesController < ApplicationController
+  before_action :find_user, only: [ :show, :edit, :update, :destroy ]
   def index
       @users = User.all
   end
@@ -27,6 +28,7 @@ class UserRolesController < ApplicationController
 
 
   def update
+    authorize @user_roles
     if @user.update(user_roles_params)
       redirect_to user_roles_url(@user), notice: "User info was successfully updated."
     else
